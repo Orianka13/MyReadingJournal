@@ -9,21 +9,25 @@
 /* Begin PBXBuildFile section */
 		59E5097328C611F50079D047 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E5097228C611F50079D047 /* AppDelegate.swift */; };
 		59E5097528C611F50079D047 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E5097428C611F50079D047 /* SceneDelegate.swift */; };
-		59E5097728C611F50079D047 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E5097628C611F50079D047 /* ViewController.swift */; };
+		59E5097728C611F50079D047 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E5097628C611F50079D047 /* OnboardingViewController.swift */; };
 		59E5097D28C611F50079D047 /* MyReadingJournal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 59E5097B28C611F50079D047 /* MyReadingJournal.xcdatamodeld */; };
 		59E5097F28C611F80079D047 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59E5097E28C611F80079D047 /* Assets.xcassets */; };
 		59E5098228C611F80079D047 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59E5098028C611F80079D047 /* LaunchScreen.storyboard */; };
+		59E5098A28C616FA0079D047 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59E5098928C616FA0079D047 /* Main.storyboard */; };
+		59E5098C28C61E680079D047 /* UIView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E5098B28C61E680079D047 /* UIView + Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		59E5096F28C611F50079D047 /* MyReadingJournal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyReadingJournal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59E5097228C611F50079D047 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		59E5097428C611F50079D047 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		59E5097628C611F50079D047 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		59E5097628C611F50079D047 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		59E5097C28C611F50079D047 /* MyReadingJournal.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyReadingJournal.xcdatamodel; sourceTree = "<group>"; };
 		59E5097E28C611F80079D047 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		59E5098128C611F80079D047 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		59E5098328C611F80079D047 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		59E5098928C616FA0079D047 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		59E5098B28C61E680079D047 /* UIView + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,14 +61,24 @@
 			isa = PBXGroup;
 			children = (
 				59E5097228C611F50079D047 /* AppDelegate.swift */,
+				59E5098D28C61E6B0079D047 /* Extensions */,
 				59E5097428C611F50079D047 /* SceneDelegate.swift */,
-				59E5097628C611F50079D047 /* ViewController.swift */,
+				59E5097628C611F50079D047 /* OnboardingViewController.swift */,
+				59E5098928C616FA0079D047 /* Main.storyboard */,
 				59E5097E28C611F80079D047 /* Assets.xcassets */,
 				59E5098028C611F80079D047 /* LaunchScreen.storyboard */,
 				59E5098328C611F80079D047 /* Info.plist */,
 				59E5097B28C611F50079D047 /* MyReadingJournal.xcdatamodeld */,
 			);
 			path = MyReadingJournal;
+			sourceTree = "<group>";
+		};
+		59E5098D28C61E6B0079D047 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				59E5098B28C61E680079D047 /* UIView + Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,6 +139,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59E5098A28C616FA0079D047 /* Main.storyboard in Resources */,
 				59E5098228C611F80079D047 /* LaunchScreen.storyboard in Resources */,
 				59E5097F28C611F80079D047 /* Assets.xcassets in Resources */,
 			);
@@ -137,8 +152,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59E5098C28C61E680079D047 /* UIView + Extensions.swift in Sources */,
 				59E5097D28C611F50079D047 /* MyReadingJournal.xcdatamodeld in Sources */,
-				59E5097728C611F50079D047 /* ViewController.swift in Sources */,
+				59E5097728C611F50079D047 /* OnboardingViewController.swift in Sources */,
 				59E5097328C611F50079D047 /* AppDelegate.swift in Sources */,
 				59E5097528C611F50079D047 /* SceneDelegate.swift in Sources */,
 			);
@@ -282,6 +298,7 @@
 				DEVELOPMENT_TEAM = 6924K5V5X2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyReadingJournal/Info.plist;
+				INFOPLIST_KEY_NSMainNibFile = Main;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
@@ -310,6 +327,7 @@
 				DEVELOPMENT_TEAM = 6924K5V5X2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyReadingJournal/Info.plist;
+				INFOPLIST_KEY_NSMainNibFile = Main;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
