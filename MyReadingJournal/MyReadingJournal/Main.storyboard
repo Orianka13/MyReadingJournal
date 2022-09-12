@@ -140,6 +140,40 @@
             </objects>
             <point key="canvasLocation" x="18.840579710144929" y="64.955357142857139"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="KTJ-nc-m7e">
+            <objects>
+                <viewController id="h34-M5-foo" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4o4-mo-xRQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="gn4-u1-Vfi"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="J4a-Iw-nVa"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rcd-m6-Fed" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2189.8550724637685" y="65.625"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="10D-Kd-VkV">
+            <objects>
+                <navigationController storyboardIdentifier="HomeNC" automaticallyAdjustsScrollViewInsets="NO" id="Rn7-vY-nnL" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="FrO-nw-ILA">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="h34-M5-foo" kind="relationship" relationship="rootViewController" id="IKk-p0-Bcv"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L2l-Op-EpM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1279.7101449275362" y="65.625"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
