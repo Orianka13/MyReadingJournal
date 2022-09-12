@@ -16,6 +16,7 @@ class OnboardingViewController: UIViewController {
     private var slides = [OnboardingSlide]()
     private var currentPage = 0 {
         didSet {
+            self.pageControl.currentPage = self.currentPage
             if currentPage == self.slides.count - 1 {
                 self.nextButton.setTitle("Get Started", for: .normal)
             } else {
@@ -35,6 +36,14 @@ class OnboardingViewController: UIViewController {
     }
     
     @IBAction func nextButtonTapped(_ sender: UIButton) {
+        if self.currentPage == self.slides.count - 1 {
+            print("Go ti the next page")
+        } else {
+            self.currentPage += 1
+            let indexPath = IndexPath(item: self.currentPage, section: 0)
+            self.collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+        }
+
     }
 }
 
@@ -60,8 +69,6 @@ extension OnboardingViewController: UICollectionViewDelegateFlowLayout {
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let width = scrollView.frame.width
         self.currentPage = Int(scrollView.contentOffset.x / width)
-        self.pageControl.currentPage = self.currentPage
-        
     }
 }
 
