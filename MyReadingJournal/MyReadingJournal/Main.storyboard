@@ -107,7 +107,7 @@
                                     <action selector="nextButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="ggb-gQ-LzD"/>
                                 </connections>
                             </button>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Aa1-rx-mSi">
+                            <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Aa1-rx-mSi">
                                 <rect key="frame" x="149" y="673" width="116" height="26"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="26" id="TpG-qc-KP1"/>

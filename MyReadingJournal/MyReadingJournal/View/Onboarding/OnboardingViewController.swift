@@ -14,6 +14,15 @@ class OnboardingViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     private var slides = [OnboardingSlide]()
+    private var currentPage = 0 {
+        didSet {
+            if currentPage == self.slides.count - 1 {
+                self.nextButton.setTitle("Get Started", for: .normal)
+            } else {
+                self.nextButton.setTitle("Next", for: .normal)
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +55,13 @@ extension OnboardingViewController: UICollectionViewDelegate, UICollectionViewDa
 extension OnboardingViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let width = scrollView.frame.width
+        self.currentPage = Int(scrollView.contentOffset.x / width)
+        self.pageControl.currentPage = self.currentPage
+        
     }
 }
 
