@@ -18,9 +18,9 @@ class OnboardingViewController: UIViewController {
         didSet {
             self.pageControl.currentPage = self.currentPage
             if currentPage == self.slides.count - 1 {
-                self.nextButton.setTitle("Get Started", for: .normal)
+                self.nextButton.setTitle("начнем!", for: .normal)
             } else {
-                self.nextButton.setTitle("Next", for: .normal)
+                self.nextButton.setTitle("далее", for: .normal)
             }
         }
     }
@@ -30,9 +30,17 @@ class OnboardingViewController: UIViewController {
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
         
-        self.slides = [OnboardingSlide(title: "Title1", description: "Description1", image: UIImage(named: "onb1") ?? UIImage()),
-                       OnboardingSlide(title: "Title2", description: "Description2", image: UIImage(named: "onb2") ?? UIImage()),
-                       OnboardingSlide(title: "Title3", description: "Description3", image: UIImage(named: "onb3") ?? UIImage())]
+        self.slides = [OnboardingSlide(title: "Читательский дневник",
+                                       description: "Добавляй заметки о прочитанных книгах, любимые цитаты, свои впечатления и мысли.",
+                                       image: UIImage(named: "onb1") ?? UIImage()),
+                       OnboardingSlide(title: "Избранное",
+                                       description: "Сохраняй в избранное понравившиеся произведения, чтобы они всегда были под рукой!",
+                                       image: UIImage(named: "onb2") ?? UIImage()),
+                       OnboardingSlide(title: "Список книг",
+                                       description: "Формируй список книг, которые хотел бы прочитать и составляй свои кастомные списки.",
+                                       image: UIImage(named: "onb3") ?? UIImage())]
+        
+        self.nextButton.titleLabel?.font = UIFont(name: "KohinoorBangla-Regular", size: 18)
     }
     
     @IBAction func nextButtonTapped(_ sender: UIButton) {
