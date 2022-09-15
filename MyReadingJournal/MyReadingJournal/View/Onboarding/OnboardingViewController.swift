@@ -7,7 +7,13 @@
 
 import UIKit
 
-class OnboardingViewController: UIViewController {
+final class OnboardingViewController: UIViewController {
+    
+    private enum Literal {
+        static let buttonTitle1 = "начнем!"
+        static let buttonTitle2 = "далее"
+        static let fontName = "KohinoorBangla-Regular"
+    }
     
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var pageControl: UIPageControl!
@@ -18,9 +24,9 @@ class OnboardingViewController: UIViewController {
         didSet {
             self.pageControl.currentPage = self.currentPage
             if currentPage == self.slides.count - 1 {
-                self.nextButton.setTitle("начнем!", for: .normal)
+                self.nextButton.setTitle(Literal.buttonTitle1, for: .normal)
             } else {
-                self.nextButton.setTitle("далее", for: .normal)
+                self.nextButton.setTitle(Literal.buttonTitle2, for: .normal)
             }
         }
     }
@@ -30,17 +36,9 @@ class OnboardingViewController: UIViewController {
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
         
-        self.slides = [OnboardingSlide(title: "Читательский дневник",
-                                       description: "Добавляй заметки о прочитанных книгах, любимые цитаты, свои впечатления и мысли.",
-                                       image: UIImage(named: "onb1") ?? UIImage()),
-                       OnboardingSlide(title: "Избранное",
-                                       description: "Сохраняй в избранное понравившиеся произведения, чтобы они всегда были под рукой!",
-                                       image: UIImage(named: "onb2") ?? UIImage()),
-                       OnboardingSlide(title: "Список книг",
-                                       description: "Формируй список книг, которые хотел бы прочитать и составляй свои кастомные списки.",
-                                       image: UIImage(named: "onb3") ?? UIImage())]
+        self.slides = OnboardingSlide.getSlides()
         
-        self.nextButton.titleLabel?.font = UIFont(name: "KohinoorBangla-Regular", size: 18)
+        self.nextButton.titleLabel?.font = UIFont(name: Literal.fontName, size: 18)
     }
     
     @IBAction func nextButtonTapped(_ sender: UIButton) {
@@ -55,10 +53,11 @@ class OnboardingViewController: UIViewController {
             let indexPath = IndexPath(item: self.currentPage, section: 0)
             self.collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
         }
-
     }
 }
 
+
+// MARK: - UICollectionViewDelegate, UICollectionViewDataSource
 extension OnboardingViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.slides.count
@@ -73,6 +72,7 @@ extension OnboardingViewController: UICollectionViewDelegate, UICollectionViewDa
     }
 }
 
+// MARK: - UICollectionViewDelegateFlowLayout
 extension OnboardingViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
