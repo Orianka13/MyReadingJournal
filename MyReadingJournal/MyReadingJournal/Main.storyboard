@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="63q-dD-l4h">
-                                <rect key="frame" x="0.0" y="44" width="414" height="629"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="600"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="bB9-fb-OdY">
                                     <size key="itemSize" width="412" height="586"/>
@@ -29,7 +29,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="kuU-RD-c6C" customClass="OnboardingCollectionViewCell" customModule="MyReadingJournal" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="21.5" width="412" height="586"/>
+                                        <rect key="frame" x="0.0" y="7" width="412" height="586"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="gO0-PS-Sk7">
                                             <rect key="frame" x="0.0" y="0.0" width="412" height="586"/>
@@ -89,15 +89,15 @@
                                 </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1EH-oC-FTc">
-                                <rect key="frame" x="142" y="756" width="130" height="31"/>
+                                <rect key="frame" x="147" y="757" width="120" height="30"/>
                                 <color key="backgroundColor" red="0.0039215686274509803" green="0.36470588235294116" blue="0.40784313725490196" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="130" id="Qh1-q1-Nes"/>
-                                    <constraint firstAttribute="height" constant="31" id="x8H-8i-q3s"/>
+                                    <constraint firstAttribute="width" constant="120" id="Qh1-q1-Nes"/>
+                                    <constraint firstAttribute="height" constant="30" id="x8H-8i-q3s"/>
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="далее"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="10"/>
@@ -108,7 +108,7 @@
                                 </connections>
                             </button>
                             <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Aa1-rx-mSi">
-                                <rect key="frame" x="149" y="673" width="116" height="26"/>
+                                <rect key="frame" x="149" y="674" width="116" height="26"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="26" id="TpG-qc-KP1"/>
                                     <constraint firstAttribute="width" constant="116" id="b8X-dp-ZiV"/>
@@ -122,18 +122,21 @@
                         <constraints>
                             <constraint firstItem="1EH-oC-FTc" firstAttribute="top" secondItem="Aa1-rx-mSi" secondAttribute="bottom" constant="57" id="49A-IK-12K"/>
                             <constraint firstItem="63q-dD-l4h" firstAttribute="leading" secondItem="sBl-7J-HbL" secondAttribute="leading" id="4dI-al-ynh"/>
-                            <constraint firstItem="63q-dD-l4h" firstAttribute="top" secondItem="sBl-7J-HbL" secondAttribute="top" id="9uw-ke-YvV"/>
+                            <constraint firstItem="63q-dD-l4h" firstAttribute="top" secondItem="sBl-7J-HbL" secondAttribute="top" constant="20" id="9uw-ke-YvV"/>
                             <constraint firstItem="63q-dD-l4h" firstAttribute="trailing" secondItem="sBl-7J-HbL" secondAttribute="trailing" id="KVf-Pd-tee"/>
                             <constraint firstItem="sBl-7J-HbL" firstAttribute="bottom" secondItem="1EH-oC-FTc" secondAttribute="bottom" constant="75" id="S4k-J4-bEd"/>
-                            <constraint firstItem="Aa1-rx-mSi" firstAttribute="top" secondItem="63q-dD-l4h" secondAttribute="bottom" id="hDC-dM-nNd"/>
+                            <constraint firstItem="Aa1-rx-mSi" firstAttribute="top" secondItem="63q-dD-l4h" secondAttribute="bottom" constant="10" id="hDC-dM-nNd"/>
                             <constraint firstItem="Aa1-rx-mSi" firstAttribute="centerX" secondItem="sBl-7J-HbL" secondAttribute="centerX" id="xGn-u2-Wpg"/>
                             <constraint firstItem="1EH-oC-FTc" firstAttribute="centerX" secondItem="sBl-7J-HbL" secondAttribute="centerX" id="zQx-fg-BoH"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bottomConstraint" destination="S4k-J4-bEd" id="YmW-F3-MKe"/>
                         <outlet property="collectionView" destination="63q-dD-l4h" id="w3x-xM-Fhy"/>
                         <outlet property="nextButton" destination="1EH-oC-FTc" id="jXX-8O-63c"/>
                         <outlet property="pageControl" destination="Aa1-rx-mSi" id="0HV-zp-nWM"/>
+                        <outlet property="pageControllBottomConstraint" destination="49A-IK-12K" id="vfa-mA-H0a"/>
+                        <outlet property="topImageConstraint" destination="9uw-ke-YvV" id="5CB-K3-o9z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

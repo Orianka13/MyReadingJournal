@@ -10,7 +10,7 @@ import UIKit
 final class OnboardingViewController: UIViewController {
     
     private enum Literal {
-        static let buttonTitle1 = "начнем!"
+        static let buttonTitle1 = "Начнем"
         static let buttonTitle2 = "далее"
         static let fontName = "KohinoorBangla-Regular"
     }
@@ -19,14 +19,22 @@ final class OnboardingViewController: UIViewController {
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var collectionView: UICollectionView!
     
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var pageControllBottomConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var topImageConstraint: NSLayoutConstraint!
+    
     private var slides = [OnboardingSlide]()
     private var currentPage = 0 {
         didSet {
             self.pageControl.currentPage = self.currentPage
             if currentPage == self.slides.count - 1 {
+                self.nextButton.isHidden = false
                 self.nextButton.setTitle(Literal.buttonTitle1, for: .normal)
             } else {
-                self.nextButton.setTitle(Literal.buttonTitle2, for: .normal)
+                self.nextButton.isHidden = true
+                //self.nextButton.setTitle(Literal.buttonTitle2, for: .normal)
             }
         }
     }
@@ -38,7 +46,13 @@ final class OnboardingViewController: UIViewController {
         
         self.slides = OnboardingSlide.getSlides()
         
+        self.nextButton.isHidden = true
         self.nextButton.titleLabel?.font = UIFont(name: Literal.fontName, size: 18)
+        
+        self.bottomConstraint.constant = self.view.frame.height / 20
+        self.pageControllBottomConstraint.constant = self.view.frame.height / 20
+        self.topImageConstraint.constant = self.view.frame.height / 10
+        
     }
     
     @IBAction func nextButtonTapped(_ sender: UIButton) {
