@@ -19,6 +19,5 @@ final class OnboardingCollectionViewCell: UICollectionViewCell {
         self.slideImageView.image = slide.image
         self.slideTitleLabel.text = slide.title
         self.slideDescriptionLabel.text = slide.description
-        
     }
 }

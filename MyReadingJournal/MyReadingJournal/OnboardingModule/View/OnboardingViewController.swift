@@ -46,13 +46,16 @@ final class OnboardingViewController: UIViewController {
         
         self.slides = OnboardingSlide.getSlides()
         
+        self.setupViews()
+    }
+    
+    private func setupViews() {
         self.nextButton.isHidden = true
         self.nextButton.titleLabel?.font = UIFont(name: Literal.fontName, size: 18)
         
         self.bottomConstraint.constant = self.view.frame.height / 20
         self.pageControllBottomConstraint.constant = self.view.frame.height / 20
         self.topImageConstraint.constant = self.view.frame.height / 10
-        
     }
     
     @IBAction func nextButtonTapped(_ sender: UIButton) {
@@ -61,7 +64,6 @@ final class OnboardingViewController: UIViewController {
             controller.modalPresentationStyle = .fullScreen
             controller.modalTransitionStyle = .flipHorizontal
             present(controller, animated: true)
-            
         } else {
             self.currentPage += 1
             let indexPath = IndexPath(item: self.currentPage, section: 0)

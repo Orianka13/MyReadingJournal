@@ -45,6 +45,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5991BD0228D4AC5B009BBD6F /* OnboardingModule */ = {
+			isa = PBXGroup;
+			children = (
+				59C5BAD228CF33A700F42221 /* Model */,
+				59C5BAD528CF366800F42221 /* View */,
+			);
+			path = OnboardingModule;
+			sourceTree = "<group>";
+		};
 		59C5BAD228CF33A700F42221 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -56,18 +65,10 @@
 		59C5BAD528CF366800F42221 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				59C5BAD628CF367200F42221 /* Onboarding */,
+				59C5BAD328CF366100F42221 /* OnboardingCollectionViewCell.swift */,
+				59E5097628C611F50079D047 /* OnboardingViewController.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		59C5BAD628CF367200F42221 /* Onboarding */ = {
-			isa = PBXGroup;
-			children = (
-				59E5097628C611F50079D047 /* OnboardingViewController.swift */,
-				59C5BAD328CF366100F42221 /* OnboardingCollectionViewCell.swift */,
-			);
-			path = Onboarding;
 			sourceTree = "<group>";
 		};
 		59E5096628C611F50079D047 = {
@@ -92,8 +93,7 @@
 				59E5097228C611F50079D047 /* AppDelegate.swift */,
 				59E5097428C611F50079D047 /* SceneDelegate.swift */,
 				59E5098D28C61E6B0079D047 /* Extensions */,
-				59C5BAD528CF366800F42221 /* View */,
-				59C5BAD228CF33A700F42221 /* Model */,
+				5991BD0228D4AC5B009BBD6F /* OnboardingModule */,
 				59E5098928C616FA0079D047 /* Main.storyboard */,
 				59E5097E28C611F80079D047 /* Assets.xcassets */,
 				59E5098028C611F80079D047 /* LaunchScreen.storyboard */,
