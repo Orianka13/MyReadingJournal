@@ -54,6 +54,13 @@
 			path = OnboardingModule;
 			sourceTree = "<group>";
 		};
+		5991BD0428D4ADD7009BBD6F /* ListModule */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ListModule;
+			sourceTree = "<group>";
+		};
 		59C5BAD228CF33A700F42221 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +101,7 @@
 				59E5097428C611F50079D047 /* SceneDelegate.swift */,
 				59E5098D28C61E6B0079D047 /* Extensions */,
 				5991BD0228D4AC5B009BBD6F /* OnboardingModule */,
+				5991BD0428D4ADD7009BBD6F /* ListModule */,
 				59E5098928C616FA0079D047 /* Main.storyboard */,
 				59E5097E28C611F80079D047 /* Assets.xcassets */,
 				59E5098028C611F80079D047 /* LaunchScreen.storyboard */,

@@ -47,6 +47,7 @@ final class OnboardingViewController: UIViewController {
         self.slides = OnboardingSlide.getSlides()
         
         self.setupViews()
+        self.pageControl.numberOfPages = self.slides.count
     }
     
     private func setupViews() {

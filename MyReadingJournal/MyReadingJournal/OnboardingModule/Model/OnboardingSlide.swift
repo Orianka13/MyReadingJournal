@@ -21,6 +21,7 @@ struct OnboardingSlide {
                                 image: UIImage(named: "onb2") ?? UIImage()),
                 OnboardingSlide(title: "Список книг",
                                 description: "Формируй список книг, которые хотел бы прочитать и составляй свои кастомные списки.",
-                                image: UIImage(named: "onb3") ?? UIImage())]
+                                image: UIImage(named: "onb3") ?? UIImage())
+        ]
     }
 }
