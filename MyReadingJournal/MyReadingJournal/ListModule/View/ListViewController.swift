@@ -11,12 +11,14 @@ final class ListViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var tabBar: UITabBar!
+    @IBOutlet weak var addButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "My Reading Journal"
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        self.addButton.setTitle("", for: .normal)
     }
     @IBAction func openMenu(_ sender: UIBarButtonItem) {
     }
@@ -24,7 +26,8 @@ final class ListViewController: UIViewController {
     }
     @IBAction func startSort(_ sender: UIBarButtonItem) {
     }
-    
+    @IBAction func addNewBook(_ sender: UIButton) {
+    }
     
 }
 

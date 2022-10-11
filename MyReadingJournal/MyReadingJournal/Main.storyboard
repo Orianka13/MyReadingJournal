@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -160,6 +161,30 @@
                                     <outlet property="delegate" destination="h34-M5-foo" id="wxX-nu-1iV"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ADk-oj-qct">
+                                <rect key="frame" x="334" y="733" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="2gD-t5-c3g"/>
+                                    <constraint firstAttribute="height" constant="60" id="XEK-qZ-v90"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" imagePadding="0.0">
+                                    <imageReference key="image" image="plus.circle.fill" catalog="system" renderingMode="original"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="37"/>
+                                    <attributedString key="attributedTitle"/>
+                                    <attributedString key="attributedSubtitle">
+                                        <fragment content=" ">
+                                            <attributes>
+                                                <font key="NSFont" size="9" name=".SFNS-Regular"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="addNewBook:" destination="h34-M5-foo" eventType="touchUpInside" id="uaN-Yb-aPO"/>
+                                </connections>
+                            </button>
                             <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AuD-gI-PAw">
                                 <rect key="frame" x="0.0" y="813" width="414" height="83"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -175,6 +200,8 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="AuD-gI-PAw" firstAttribute="leading" secondItem="gn4-u1-Vfi" secondAttribute="leading" id="86r-RK-Wx8"/>
+                            <constraint firstItem="gn4-u1-Vfi" firstAttribute="trailing" secondItem="ADk-oj-qct" secondAttribute="trailing" constant="20" id="Cd6-Jz-tmt"/>
+                            <constraint firstItem="AuD-gI-PAw" firstAttribute="top" secondItem="ADk-oj-qct" secondAttribute="bottom" constant="20" id="la1-Yd-l5b"/>
                             <constraint firstItem="AuD-gI-PAw" firstAttribute="trailing" secondItem="gn4-u1-Vfi" secondAttribute="trailing" id="le4-le-ktW"/>
                             <constraint firstAttribute="bottom" secondItem="AuD-gI-PAw" secondAttribute="bottom" id="ruA-gz-ZUh"/>
                         </constraints>
@@ -199,6 +226,7 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="addButton" destination="ADk-oj-qct" id="8dh-a0-bHo"/>
                         <outlet property="tabBar" destination="AuD-gI-PAw" id="XPF-A0-je6"/>
                         <outlet property="tableView" destination="V5y-tB-PLz" id="Cb8-ty-opa"/>
                     </connections>
@@ -234,6 +262,7 @@
         <image name="line.3.horizontal.decrease" catalog="system" width="128" height="73"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
+        <image name="plus.circle.fill" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
