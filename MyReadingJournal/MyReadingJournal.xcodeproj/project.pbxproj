@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5991BD0728F57C97009BBD6F /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5991BD0628F57C97009BBD6F /* ListViewController.swift */; };
+		5991BD0928F58A88009BBD6F /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5991BD0828F58A88009BBD6F /* ListTableViewCell.swift */; };
+		5991BD0C28F592B9009BBD6F /* BookPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5991BD0B28F592B9009BBD6F /* BookPreview.swift */; };
 		59C5BAD128CF33A200F42221 /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C5BAD028CF33A200F42221 /* OnboardingSlide.swift */; };
 		59C5BAD428CF366100F42221 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C5BAD328CF366100F42221 /* OnboardingCollectionViewCell.swift */; };
 		59E5097328C611F50079D047 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E5097228C611F50079D047 /* AppDelegate.swift */; };
@@ -22,6 +24,8 @@
 
 /* Begin PBXFileReference section */
 		5991BD0628F57C97009BBD6F /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		5991BD0828F58A88009BBD6F /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
+		5991BD0B28F592B9009BBD6F /* BookPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookPreview.swift; sourceTree = "<group>"; };
 		59C5BAD028CF33A200F42221 /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
 		59C5BAD328CF366100F42221 /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
 		59E5096F28C611F50079D047 /* MyReadingJournal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyReadingJournal.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -59,6 +63,7 @@
 		5991BD0428D4ADD7009BBD6F /* ListModule */ = {
 			isa = PBXGroup;
 			children = (
+				5991BD0A28F59285009BBD6F /* Model */,
 				5991BD0528F57C6B009BBD6F /* View */,
 			);
 			path = ListModule;
@@ -68,8 +73,17 @@
 			isa = PBXGroup;
 			children = (
 				5991BD0628F57C97009BBD6F /* ListViewController.swift */,
+				5991BD0828F58A88009BBD6F /* ListTableViewCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		5991BD0A28F59285009BBD6F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5991BD0B28F592B9009BBD6F /* BookPreview.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		59C5BAD228CF33A700F42221 /* Model */ = {
@@ -204,8 +218,10 @@
 				59E5098C28C61E680079D047 /* UIView + Extensions.swift in Sources */,
 				59E5097D28C611F50079D047 /* MyReadingJournal.xcdatamodeld in Sources */,
 				59E5097728C611F50079D047 /* OnboardingViewController.swift in Sources */,
+				5991BD0C28F592B9009BBD6F /* BookPreview.swift in Sources */,
 				59E5097328C611F50079D047 /* AppDelegate.swift in Sources */,
 				59C5BAD128CF33A200F42221 /* OnboardingSlide.swift in Sources */,
+				5991BD0928F58A88009BBD6F /* ListTableViewCell.swift in Sources */,
 				59C5BAD428CF366100F42221 /* OnboardingCollectionViewCell.swift in Sources */,
 				5991BD0728F57C97009BBD6F /* ListViewController.swift in Sources */,
 				59E5097528C611F50079D047 /* SceneDelegate.swift in Sources */,
