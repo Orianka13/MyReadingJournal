@@ -19,6 +19,7 @@ final class ListViewController: UIViewController {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.addButton.setTitle("", for: .normal)
+        self.addButton.tintColor = UIColor(red: 208 / 255, green: 92 / 255, blue: 67 / 255, alpha: 1)
     }
     @IBAction func openMenu(_ sender: UIBarButtonItem) {
     }
