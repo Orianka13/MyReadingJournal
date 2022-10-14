@@ -24,6 +24,8 @@ final class ListViewController: UIViewController {
     @IBAction func startSort(_ sender: UIBarButtonItem) {
     }
     @IBAction func addNewBook(_ sender: UIButton) {
+        let detailVC = DetailAssembly.build()
+        self.navigationController?.pushViewController(detailVC, animated: true)
     }
     
     private func setUIElements() {
