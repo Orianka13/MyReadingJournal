@@ -6,5 +6,6 @@ target 'MyReadingJournal' do
   use_frameworks!
 
   pod 'Cosmos', '~> 23.0'
+  pod 'SnapKit', '~> 5.6.0'
 
 end
