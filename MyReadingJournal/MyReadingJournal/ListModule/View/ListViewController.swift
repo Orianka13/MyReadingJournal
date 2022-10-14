@@ -15,11 +15,7 @@ final class ListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "My Reading Journal"
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
-        self.addButton.setTitle("", for: .normal)
-        self.addButton.tintColor = UIColor(red: 208 / 255, green: 92 / 255, blue: 67 / 255, alpha: 1)
+        self.setUIElements()
     }
     @IBAction func openMenu(_ sender: UIBarButtonItem) {
     }
@@ -30,6 +26,14 @@ final class ListViewController: UIViewController {
     @IBAction func addNewBook(_ sender: UIButton) {
     }
     
+    private func setUIElements() {
+        title = "My Reading Journal"
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        self.addButton.setTitle("", for: .normal)
+        self.addButton.tintColor = UIColor(red: 1 / 255, green: 93 / 255, blue: 104 / 255, alpha: 1)
+        self.tabBar.selectedItem = tabBar.items?.first
+    }
 }
 
 //MARK: - UITableViewDelegate, UITableViewDataSource
