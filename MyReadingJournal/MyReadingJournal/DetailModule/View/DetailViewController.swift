@@ -29,14 +29,15 @@ final class DetailViewController: UIViewController {
     override func loadView() {
         super.loadView()
         self.presenter?.loadView(controller: self, view: self.detailView)
-        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.addSubview(detailView)
-        //self.view.backgroundColor = .red
+        title = "Добавить книгу"
     }
+    
+    
 }
 
 
