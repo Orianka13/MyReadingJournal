@@ -18,6 +18,7 @@ final class DetailView: UIView {
     private enum Literal {
         static let nameOfBook = "Название книги"
         static let author = "Автор"
+        static let description = "Мои впечатления / цитаты:"
         
     }
     
@@ -88,43 +89,65 @@ final class DetailView: UIView {
     
     private lazy var calendarButton: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage(systemName: "calendar"), for: .normal)
+        let image = UIImage(systemName: "calendar")
+        button.setImage(image, for: .normal)
+        button.setPreferredSymbolConfiguration(UIImage.SymbolConfiguration(pointSize: 26), forImageIn: .normal)
         button.tintColor = Colors.buttonColor
+        button.backgroundColor = .gray
         return button
     }()
     
     private lazy var ratingStars: CosmosView = {
         let rating = CosmosView()
         rating.settings.filledColor = Colors.ratingColor
+        rating.settings.emptyBorderColor = Colors.ratingColor
         rating.settings.starSize = 30
+        rating.settings.emptyBorderWidth = 2
         return rating
     }()
     
     private lazy var takePhotoButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(systemName: "camera"), for: .normal)
+        button.setPreferredSymbolConfiguration(UIImage.SymbolConfiguration(pointSize: 20), forImageIn: .normal)
         button.tintColor = Colors.buttonColor
+        button.backgroundColor = .gray
         return button
     }()
     
     private lazy var uploadPhotoButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(systemName: "photo"), for: .normal)
+        button.setPreferredSymbolConfiguration(UIImage.SymbolConfiguration(pointSize: 20), forImageIn: .normal)
         button.tintColor = Colors.buttonColor
+        button.backgroundColor = .gray
         return button
     }()
     
-//    private lazy var photoStackView: UIStackView = {
-//        let stackView = UIStackView()
-//        stackView.axis = .horizontal
-//        stackView.alignment = .center
-//        stackView.distribution = .equalSpacing
-//        stackView.spacing = 20
-//        stackView.backgroundColor = Colors.tfBackgroundColor
-//        stackView.addSubview(takePhotoButton)
-//        stackView.addSubview(uploadPhotoButton)
-//        return stackView
-//    }()
+    private lazy var descriptionLabel: UILabel = {
+        let label = UILabel()
+        label.text = Literal.description
+        label.textColor = Colors.tftextColor
+        return label
+    }()
+    
+    private lazy var descriptionTV: UITextView = {
+        let tf = UITextView()
+        tf.backgroundColor = Colors.tfBackgroundColor
+        tf.layer.cornerRadius = Metrics.cornerRadius
+        tf.textColor = Colors.tftextColor
+        return tf
+    }()
+    
+    private lazy var saveButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Сохранить", for: .normal)
+        button.tintColor = Colors.buttonColor
+        button.backgroundColor = .gray
+        button.layer.cornerRadius = Metrics.cornerRadius
+        return button
+    }()
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -149,9 +172,11 @@ private extension DetailView {
         self.addSubview(dateLabel)
         self.addSubview(calendarButton)
         self.addSubview(ratingStars)
-        
         self.addSubview(takePhotoButton)
         self.addSubview(uploadPhotoButton)
+        self.addSubview(descriptionLabel)
+        self.addSubview(descriptionTV)
+        self.addSubview(saveButton)
     }
 }
 
@@ -171,27 +196,27 @@ private extension DetailView {
             make.top.equalTo(self.safeAreaLayoutGuide).inset(20)
             make.leading.equalTo(self.coverImage.snp.trailing).inset(-10)
             make.trailing.equalToSuperview().inset(20)
-            make.height.equalTo(30)
+            make.height.equalTo(35)
         }
         
         self.authorTF.snp.makeConstraints { make in
             make.top.equalTo(self.nameOfBookTF.snp.bottom).inset(-20)
             make.leading.equalTo(self.coverImage.snp.trailing).inset(-10)
             make.trailing.equalToSuperview().inset(20)
-            make.height.equalTo(30)
+            make.height.equalTo(35)
         }
         
         self.dateLabel.snp.makeConstraints { make in
             make.top.equalTo(self.authorTF.snp.bottom).inset(-20)
             make.leading.equalTo(self.coverImage.snp.trailing).inset(-10)
             make.trailing.equalTo(self.calendarButton.snp.leading)
-            make.height.equalTo(30)
+            make.height.equalTo(35)
         }
         
         self.calendarButton.snp.makeConstraints { make in
             make.top.equalTo(self.authorTF.snp.bottom).inset(-20)
             make.trailing.equalToSuperview().inset(20)
-            make.height.equalTo(30)
+            make.height.equalTo(35)
             make.width.equalTo(30)
         }
         
@@ -199,23 +224,41 @@ private extension DetailView {
             make.top.equalTo(self.dateLabel.snp.bottom).inset(-20)
             make.leading.equalTo(self.coverImage.snp.trailing).inset(-10)
             make.trailing.equalToSuperview().inset(20)
-            make.height.equalTo(30)
+            make.height.equalTo(35)
         }
 
 
         self.takePhotoButton.snp.makeConstraints { make in
-
-            make.top.equalTo(self.coverImage.snp.bottom).inset(-10)
-            make.trailing.equalTo(self.coverImage.snp.centerX).inset(-10)
-            make.height.equalTo(40)
-            make.width.equalTo(40)
+            make.top.equalTo(self.coverImage.snp.bottom)
+            make.trailing.equalTo(self.coverImage.snp.centerX).offset(-10)
+            make.height.equalTo(self.coverImage.snp.width).dividedBy(4)
+            make.width.equalTo(self.coverImage.snp.width).dividedBy(4)
         }
 
         self.uploadPhotoButton.snp.makeConstraints { make in
-            make.top.equalTo(self.coverImage.snp.bottom).inset(-10)
-            make.leading.equalTo(self.coverImage.snp.centerX).inset(10)
+            make.top.equalTo(self.coverImage.snp.bottom)
+            make.leading.equalTo(self.coverImage.snp.centerX).offset(10)
+            make.height.equalTo(self.coverImage.snp.width).dividedBy(4)
+            make.width.equalTo(self.coverImage.snp.width).dividedBy(4)
+        }
+        
+        self.descriptionLabel.snp.makeConstraints { make in
+            make.top.equalTo(self.uploadPhotoButton.snp.bottom).inset(-20)
+            make.leading.equalToSuperview().inset(20)
+            make.trailing.equalToSuperview().inset(20)
+        }
+        self.descriptionTV.snp.makeConstraints { make in
+            make.top.equalTo(self.descriptionLabel.snp.bottom).inset(-10)
+            make.leading.equalToSuperview().inset(20)
+            make.trailing.equalToSuperview().inset(20)
+            make.height.equalToSuperview().dividedBy(3.5)
+        }
+        
+        self.saveButton.snp.makeConstraints { make in
+            make.top.equalTo(self.descriptionTV.snp.bottom).inset(-10)
+            make.centerX.equalToSuperview()
+            make.width.equalTo(100)
             make.height.equalTo(40)
-            make.width.equalTo(40)
         }
     }
 }
