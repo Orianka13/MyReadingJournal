@@ -8,6 +8,10 @@
 import UIKit
 
 final class DetailViewController: UIViewController {
+    
+    private enum Literal {
+        static let navigationBarTitle = "Добавить книгу"
+    }
 
     private let detailView: DetailView
     private let presenter: IDetailPresenter?
@@ -34,7 +38,7 @@ final class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.addSubview(detailView)
-        title = "Добавить книгу"
+        title = Literal.navigationBarTitle
     }
     
     

@@ -19,7 +19,11 @@ final class DetailView: UIView {
         static let nameOfBook = "Название книги"
         static let author = "Автор"
         static let description = "Мои впечатления / цитаты:"
-        
+        static let saveButtonTitle = "Сохранить"
+        static let placeholderImageName = "placeholder"
+        static let calendarImageName = "calendar"
+        static let takePhotoImageName = "camera"
+        static let uploadPhotoImageName = "photo"
     }
     
     private enum Fonts {
@@ -40,7 +44,7 @@ final class DetailView: UIView {
     
     private lazy var coverImage: UIImageView = {
         let imageView = UIImageView()
-        let image = UIImage(named: "placeholder")
+        let image = UIImage(named: Literal.placeholderImageName)
         imageView.image = image
         imageView.alpha = 0.5
         imageView.contentMode = .scaleAspectFill
@@ -89,7 +93,7 @@ final class DetailView: UIView {
     
     private lazy var calendarButton: UIButton = {
         let button = UIButton()
-        let image = UIImage(systemName: "calendar")
+        let image = UIImage(systemName: Literal.calendarImageName)
         button.setImage(image, for: .normal)
         button.setPreferredSymbolConfiguration(UIImage.SymbolConfiguration(pointSize: 26), forImageIn: .normal)
         button.tintColor = Colors.buttonColor
@@ -108,7 +112,7 @@ final class DetailView: UIView {
     
     private lazy var takePhotoButton: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage(systemName: "camera"), for: .normal)
+        button.setImage(UIImage(systemName: Literal.takePhotoImageName), for: .normal)
         button.setPreferredSymbolConfiguration(UIImage.SymbolConfiguration(pointSize: 20), forImageIn: .normal)
         button.tintColor = Colors.buttonColor
         button.backgroundColor = .gray
@@ -117,7 +121,7 @@ final class DetailView: UIView {
     
     private lazy var uploadPhotoButton: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage(systemName: "photo"), for: .normal)
+        button.setImage(UIImage(systemName: Literal.uploadPhotoImageName), for: .normal)
         button.setPreferredSymbolConfiguration(UIImage.SymbolConfiguration(pointSize: 20), forImageIn: .normal)
         button.tintColor = Colors.buttonColor
         button.backgroundColor = .gray
@@ -141,7 +145,7 @@ final class DetailView: UIView {
     
     private lazy var saveButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Сохранить", for: .normal)
+        button.setTitle(Literal.saveButtonTitle, for: .normal)
         button.tintColor = Colors.buttonColor
         button.backgroundColor = .gray
         button.layer.cornerRadius = Metrics.cornerRadius
@@ -226,7 +230,6 @@ private extension DetailView {
             make.trailing.equalToSuperview().inset(20)
             make.height.equalTo(35)
         }
-
 
         self.takePhotoButton.snp.makeConstraints { make in
             make.top.equalTo(self.coverImage.snp.bottom)

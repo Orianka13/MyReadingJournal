@@ -9,6 +9,14 @@ import UIKit
 
 final class ListViewController: UIViewController {
     
+    private enum Colors {
+        static let buttonColor = UIColor(red: 1 / 255, green: 93 / 255, blue: 104 / 255, alpha: 1)
+    }
+    
+    private enum Literal {
+        static let navigationBarTitle = "My Reading Journal"
+    }
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var tabBar: UITabBar!
     @IBOutlet weak var addButton: UIButton!
@@ -29,11 +37,11 @@ final class ListViewController: UIViewController {
     }
     
     private func setUIElements() {
-        title = "My Reading Journal"
+        title = Literal.navigationBarTitle
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.addButton.setTitle("", for: .normal)
-        self.addButton.tintColor = UIColor(red: 1 / 255, green: 93 / 255, blue: 104 / 255, alpha: 1)
+        self.addButton.tintColor = Colors.buttonColor
         self.tabBar.selectedItem = tabBar.items?.first
     }
 }
