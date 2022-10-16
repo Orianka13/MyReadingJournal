@@ -27,7 +27,7 @@ final class DetailView: UIView {
     }
     
     private enum Fonts {
-        
+        static let mainFont = UIFont(name: "KohinoorBangla-Regular", size: 16)
     }
     
     private enum Metrics {
@@ -35,8 +35,8 @@ final class DetailView: UIView {
     }
     
     private enum Colors {
-        static let mainColor = UIColor(red: 103/255, green: 222/255, blue: 165/255, alpha: 1)
-        static let tfBackgroundColor: UIColor = .systemGray
+        static let mainColor: UIColor = .white
+        static let tfBackgroundColor = UIColor(red: 1 / 255, green: 93 / 255, blue: 104 / 255, alpha: 0.2)
         static let tftextColor: UIColor = .black
         static let buttonColor = UIColor(red: 1 / 255, green: 93 / 255, blue: 104 / 255, alpha: 1)
         static let ratingColor = UIColor(red: 208 / 255, green: 92 / 255, blue: 67 / 255, alpha: 1)
@@ -46,7 +46,7 @@ final class DetailView: UIView {
         let imageView = UIImageView()
         let image = UIImage(named: Literal.placeholderImageName)
         imageView.image = image
-        imageView.alpha = 0.5
+        imageView.alpha = 1
         imageView.contentMode = .scaleAspectFill
         imageView.layer.masksToBounds = true
         imageView.cornerRadius = Metrics.cornerRadius
@@ -57,6 +57,7 @@ final class DetailView: UIView {
         let tf = UITextField()
         tf.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: tf.frame.height))
         tf.leftViewMode = .always
+        tf.font = Fonts.mainFont
         tf.placeholder = Literal.nameOfBook
         tf.backgroundColor = Colors.tfBackgroundColor
         tf.layer.cornerRadius = Metrics.cornerRadius
@@ -68,6 +69,7 @@ final class DetailView: UIView {
         let tf = UITextField()
         tf.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: tf.frame.height))
         tf.leftViewMode = .always
+        tf.font = Fonts.mainFont
         tf.placeholder = Literal.author
         tf.backgroundColor = Colors.tfBackgroundColor
         tf.layer.cornerRadius = Metrics.cornerRadius
@@ -85,6 +87,7 @@ final class DetailView: UIView {
         let label = UILabel()
         let date = Date()
         label.text = "  " + dateFormatter.string(from: date)
+        label.font = Fonts.mainFont
         label.backgroundColor = Colors.tfBackgroundColor
         label.layer.cornerRadius = Metrics.cornerRadius
         label.layer.masksToBounds = true
@@ -97,7 +100,6 @@ final class DetailView: UIView {
         button.setImage(image, for: .normal)
         button.setPreferredSymbolConfiguration(UIImage.SymbolConfiguration(pointSize: 26), forImageIn: .normal)
         button.tintColor = Colors.buttonColor
-        button.backgroundColor = .gray
         return button
     }()
     
@@ -115,7 +117,8 @@ final class DetailView: UIView {
         button.setImage(UIImage(systemName: Literal.takePhotoImageName), for: .normal)
         button.setPreferredSymbolConfiguration(UIImage.SymbolConfiguration(pointSize: 20), forImageIn: .normal)
         button.tintColor = Colors.buttonColor
-        button.backgroundColor = .gray
+        button.backgroundColor = Colors.tfBackgroundColor
+        button.layer.cornerRadius = Metrics.cornerRadius
         return button
     }()
     
@@ -124,12 +127,14 @@ final class DetailView: UIView {
         button.setImage(UIImage(systemName: Literal.uploadPhotoImageName), for: .normal)
         button.setPreferredSymbolConfiguration(UIImage.SymbolConfiguration(pointSize: 20), forImageIn: .normal)
         button.tintColor = Colors.buttonColor
-        button.backgroundColor = .gray
+        button.backgroundColor = Colors.tfBackgroundColor
+        button.layer.cornerRadius = Metrics.cornerRadius
         return button
     }()
     
     private lazy var descriptionLabel: UILabel = {
         let label = UILabel()
+        label.font = Fonts.mainFont
         label.text = Literal.description
         label.textColor = Colors.tftextColor
         return label
@@ -137,6 +142,7 @@ final class DetailView: UIView {
     
     private lazy var descriptionTV: UITextView = {
         let tf = UITextView()
+        tf.font = Fonts.mainFont
         tf.backgroundColor = Colors.tfBackgroundColor
         tf.layer.cornerRadius = Metrics.cornerRadius
         tf.textColor = Colors.tftextColor
@@ -147,7 +153,8 @@ final class DetailView: UIView {
         let button = UIButton()
         button.setTitle(Literal.saveButtonTitle, for: .normal)
         button.tintColor = Colors.buttonColor
-        button.backgroundColor = .gray
+        button.titleLabel?.font = Fonts.mainFont
+        button.backgroundColor = Colors.buttonColor
         button.layer.cornerRadius = Metrics.cornerRadius
         return button
     }()
@@ -232,17 +239,17 @@ private extension DetailView {
         }
 
         self.takePhotoButton.snp.makeConstraints { make in
-            make.top.equalTo(self.coverImage.snp.bottom)
+            make.top.equalTo(self.coverImage.snp.bottom).inset(-5)
             make.trailing.equalTo(self.coverImage.snp.centerX).offset(-10)
             make.height.equalTo(self.coverImage.snp.width).dividedBy(4)
-            make.width.equalTo(self.coverImage.snp.width).dividedBy(4)
+            make.width.equalTo(self.coverImage.snp.width).dividedBy(3)
         }
 
         self.uploadPhotoButton.snp.makeConstraints { make in
-            make.top.equalTo(self.coverImage.snp.bottom)
+            make.top.equalTo(self.coverImage.snp.bottom).inset(-5)
             make.leading.equalTo(self.coverImage.snp.centerX).offset(10)
             make.height.equalTo(self.coverImage.snp.width).dividedBy(4)
-            make.width.equalTo(self.coverImage.snp.width).dividedBy(4)
+            make.width.equalTo(self.coverImage.snp.width).dividedBy(3)
         }
         
         self.descriptionLabel.snp.makeConstraints { make in
