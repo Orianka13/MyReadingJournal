@@ -13,5 +13,5 @@ struct BookPreview {
     let author: String
     let description: String?
     let date: Date
-    let rating: Int?
+    let rating: Int
 }

@@ -14,7 +14,7 @@ protocol IDetailView {
 }
 
 final class DetailView: UIView {
-    
+
     private enum Literal {
         static let nameOfBook = "Название книги"
         static let author = "Автор"
@@ -55,7 +55,8 @@ final class DetailView: UIView {
     
     private lazy var nameOfBookTF: UITextField = {
         let tf = UITextField()
-        tf.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: tf.frame.height))
+        tf.leftView = UIView(frame: CGRect(x: 0, y: 0,
+                                           width: 10, height: tf.frame.height))
         tf.leftViewMode = .always
         tf.font = Fonts.mainFont
         tf.placeholder = Literal.nameOfBook
@@ -67,7 +68,8 @@ final class DetailView: UIView {
     
     private lazy var authorTF: UITextField = {
         let tf = UITextField()
-        tf.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: tf.frame.height))
+        tf.leftView = UIView(frame: CGRect(x: 0, y: 0,
+                                           width: 10, height: tf.frame.height))
         tf.leftViewMode = .always
         tf.font = Fonts.mainFont
         tf.placeholder = Literal.author
@@ -98,7 +100,8 @@ final class DetailView: UIView {
         let button = UIButton()
         let image = UIImage(systemName: Literal.calendarImageName)
         button.setImage(image, for: .normal)
-        button.setPreferredSymbolConfiguration(UIImage.SymbolConfiguration(pointSize: 26), forImageIn: .normal)
+        button.setPreferredSymbolConfiguration(UIImage.SymbolConfiguration(pointSize: 26),
+                                               forImageIn: .normal)
         button.tintColor = Colors.buttonColor
         return button
     }()
@@ -114,8 +117,10 @@ final class DetailView: UIView {
     
     private lazy var takePhotoButton: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage(systemName: Literal.takePhotoImageName), for: .normal)
-        button.setPreferredSymbolConfiguration(UIImage.SymbolConfiguration(pointSize: 20), forImageIn: .normal)
+        button.setImage(UIImage(systemName: Literal.takePhotoImageName),
+                        for: .normal)
+        button.setPreferredSymbolConfiguration(UIImage.SymbolConfiguration(pointSize: 20),
+                                               forImageIn: .normal)
         button.tintColor = Colors.buttonColor
         button.backgroundColor = Colors.tfBackgroundColor
         button.layer.cornerRadius = Metrics.cornerRadius
@@ -124,8 +129,10 @@ final class DetailView: UIView {
     
     private lazy var uploadPhotoButton: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage(systemName: Literal.uploadPhotoImageName), for: .normal)
-        button.setPreferredSymbolConfiguration(UIImage.SymbolConfiguration(pointSize: 20), forImageIn: .normal)
+        button.setImage(UIImage(systemName: Literal.uploadPhotoImageName),
+                        for: .normal)
+        button.setPreferredSymbolConfiguration(UIImage.SymbolConfiguration(pointSize: 20),
+                                               forImageIn: .normal)
         button.tintColor = Colors.buttonColor
         button.backgroundColor = Colors.tfBackgroundColor
         button.layer.cornerRadius = Metrics.cornerRadius

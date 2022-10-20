@@ -21,6 +21,8 @@ final class ListViewController: UIViewController {
     @IBOutlet weak var tabBar: UITabBar!
     @IBOutlet weak var addButton: UIButton!
     
+    private var bookPreviews = [BookPreview]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setUIElements()

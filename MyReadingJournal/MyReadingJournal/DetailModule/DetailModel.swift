@@ -5,22 +5,22 @@
 //  Created by Олеся Егорова on 14.10.2022.
 //
 
-import Foundation
+import UIKit
 
-protocol IDetailModel {
+protocol IBookDetails {
   
 }
 
-final class DetailModel {
- 
-    
-    init() {
- 
-    }
-    
+struct BookDetails {
+    let image: UIImage?
+    let nameOfBook: String
+    let author: String
+    let date: Date
+    let rating: Int
+    let description: String?
 }
 
-// MARK: - IDetailModel
-extension DetailModel: IDetailModel {
+// MARK: - IBookDetails
+extension BookDetails: IBookDetails {
  
 }
